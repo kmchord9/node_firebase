@@ -10,8 +10,12 @@ RUN apt-get update \
 RUN npm install -g \
     firebase-tools \
     create-nuxt-app \
-    create-react-app
+    create-react-app \
+    @vue/cli
 
 USER node
+
+EXPOSE 3000
+ENV HOST 0.0.0.0
 
 CMD ["/bin/bash"]
