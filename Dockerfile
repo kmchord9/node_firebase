@@ -12,7 +12,6 @@ RUN npm install -g \
     create-nuxt-app \
     create-react-app \
     @vue/cli \
-    yarn
 
 USER node
 WORKDIR /work
