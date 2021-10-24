@@ -11,9 +11,11 @@ RUN npm install -g \
     firebase-tools \
     create-nuxt-app \
     create-react-app \
-    @vue/cli
+    @vue/cli \
+    yarn
 
 USER node
+WORKDIR /work
 
 EXPOSE 3000
 ENV HOST 0.0.0.0

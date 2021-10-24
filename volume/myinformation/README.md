@@ -1,4 +1,4 @@
-# nuxtapp
+# myinformation
 
 ## Build Setup
 
