@@ -1,4 +1,4 @@
-# myinformation
+# myinfo
 
 ## Build Setup
 
