@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:14.18
 
 ARG USERNAME=node
 
@@ -9,9 +9,7 @@ RUN apt-get update \
 
 RUN npm install -g \
     firebase-tools \
-    create-nuxt-app \
-    create-react-app \
-    @vue/cli \
+    create-nuxt-app 
 
 USER node
 WORKDIR /work
