@@ -1,57 +1,60 @@
 <template>
- <div class="page">
-   <label>
-     <span>
-       お名前:
-     </span>
-     <input
-       type="text"
-       v-model="user.name"
-     >
-   </label>
-   <label>
-     <span>
-       email:
-     </span>
-     <input
-       type="text"
-       v-model="user.email"
-     >
-   </label>
-   <button
-     type="button"
-     @click="submit"
-   >
-     Submit
-   </button>
- </div>
+  <div id="app">
+    <ul class="grid">
+      <li class="grid__item">
+      <Accordion>
+        <div slot="title">chart1</div>
+        <div class="content" slot="content">
+          <p><RandomChart/></p>
+        </div>
+      </Accordion>
+      </li>
+      <li class="grid__item">
+      <Accordion>
+        <div slot="title">chart1</div>
+        <div class="content" slot="content">
+          <p><RandomChart/></p>
+        </div>
+      </Accordion>
+      </li>
+
+    </ul>
+  </div>
 </template>
 
+<style>
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  max-width: 640px;
+  padding: 10px;
+  margin: 20px auto;
+  border: solid 1px #333;
+}
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: dotted 1px #999;
+  text-align: center;
+}
+
+/* grid layout */
+.grid {
+  display: grid;
+  grid-gap: 10px;
+}
+</style>
+
 <script>
-import db from '@/plugins/firebase';
-import { getDatabase, ref, set } from "firebase/database";
-
-function writeUserData(db, userId, name, email) {
-  set(ref(db, 'users/' + userId), {
-    username: name,
-    email: email,
-  });
-}
-
+import Accordion from '../components/Accordion.vue'
 export default {
- data () {
-   return {
-     user: {
-       name: "",
-       email: ""
-     },
-   }
- },
- methods: {
-   submit () {
-     writeUserData(db, 5, this.user.name, this.user.email)
-
-   },
- },
-}
+  components: { Accordion },}
 </script>
